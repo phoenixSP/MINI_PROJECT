@@ -25,7 +25,9 @@ $marks12=$_POST["marks12"];
 $board12=$_POST["board12"];
 $marks10=$_POST["marks10"];
 $board10=$_POST["board10"];
-$sql = "INSERT INTO user VALUES ($regno, $rollno, $email, $mobNum, $fname,$lname,$perAdd, $dept, $cgpa,$backlogs,$board12, $marks12,$board10,$marks10,"",$email)";
+$about="abbb"
+$sql = "INSERT INTO user(regNo,rollNo,email,mobNum,fname,lname, perAdd,temAdd,dept,cgpa,backlogs,board12,marks12,board10,marks10,about,pass) VALUES ('$regno', '$rollno','$email', '$mobNum', '$fname', '$lname', '$perAdd', '$temAdd', '$dept', '$cgpa', '$backlogs', '$board12', '$marks12', '$board10', '$marks10', '$about', '$pass')";
+
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
@@ -35,3 +37,8 @@ if ($conn->query($sql) === TRUE) {
 
 $conn->close();
 ?>
+
+//(regNo,rollNo,email,mobNum,fname,lname, perAdd,temAdd,dept,cgpa,backlogs,board12,marks12,board10,marks10,about,pass)
+//(`regNo`, `rollNo`, `email`, `mobNum`, `fname`, `lname`, `perAdd`, `temAdd`, `dept`, `cgpa`, `backlogs`, `board12`, `marks12`, `board10`, `marks10`, `about`, `
+//pass`)
+

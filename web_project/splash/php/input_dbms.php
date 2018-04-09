@@ -9,6 +9,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
+$regno=$_POST["regno"];
+$pass=$_POST["pass"];
 $fname=$_POST["fname"];
 $lname=$_POST["lname"];
 $Number=$_POST["Number"];

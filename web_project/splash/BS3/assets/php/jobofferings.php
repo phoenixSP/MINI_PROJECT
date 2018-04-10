@@ -104,15 +104,23 @@ if (!$query) {
 </head>
 <body>
 	<h1>Companies</h1>
+	<div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
 	<table class="data-table">
 		<caption class="title">Check out for opportunities</caption>
 		<thead>
 			<tr>
+				<th>SERIAL NUMBER</th>
 				<th>COMPANY</th>
 				<th>PACKAGE</th>
-				<th>ITEM</th>
+				<th>BRANCHES OPEN</th>
 				<th>DATE</th>
-				<th>AMOUNT</th>
+				<th>MINIMUM CGPA</th>
+				<th>MAXIMUM SUPPLIMENTARY</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -121,24 +129,32 @@ if (!$query) {
 		$total 	= 0;
 		while ($row = mysqli_fetch_array($query))
 		{
-			$amount  = $row['amount'] == 0 ? '' : number_format($row['amount']);
 			echo '<tr>
 					<td>'.$no.'</td>
-					<td>'.$row['name'].'</td>
-					<td>'.$row['item'].'</td>
-					<td>'. date('F d, Y', strtotime($row['date'])) . '</td>
-					<td>'.$amount.'</td>
+					<td>'.$row['Company'].'</td>
+					<td>'.$row['Package'].'</td>
+					<td>'.$row['Branches Open'].'</td>
+					<td>'. date('F d, Y', strtotime($row['Date'])) . '</td>
+					<td>'.$row['Minimum CGPA'].'</td>
+					<td>'.$row['Maximum Suppli'].'</td>
 				</tr>';
-			$total += $row['amount'];
 			$no++;
-		}?>
+		}
+		$no--;
+		?>
 		</tbody>
 		<tfoot>
 			<tr>
-				<th colspan="4">TOTAL</th>
-				<th><?=number_format($total)?></th>
+				<th colspan="4">NUMBER OF COMPANIES</th>
+				<th><?=number_format($no)?></th>
 			</tr>
 		</tfoot>
 	</table>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
 </body>
 </html>

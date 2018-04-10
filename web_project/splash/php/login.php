@@ -19,8 +19,9 @@
 		
       if($count == 1) {
          //session_register("myusername");
+         echo "successfully logged in";
          $_SESSION['login_user'] = $myusername;
-         header("location: BS3/dashboard.html");
+         header("location:../BS3/dashboard.html");
 
       }
       else {

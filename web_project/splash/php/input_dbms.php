@@ -36,7 +36,8 @@ $sql = "INSERT INTO user(regNo,rollNo,email,mobNum,fname,lname, perAdd,temAdd,de
 
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+	header("location: ../index.html");
+    //echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
